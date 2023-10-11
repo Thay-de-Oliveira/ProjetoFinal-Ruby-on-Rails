@@ -22,11 +22,9 @@ Comando para estabelecer uma conexão SSH direta na máquina virtual iniciada, p
 ### Rails
 Rails: Comando padrão para inicialização dos recursos do framework "rails";
 
-rails new
-New: Comando para criação de um novo projeto em Ruby.
+rails new: Comando para criação de um novo projeto em Ruby.
 
-rails s -b 0.0.0.0
-s -b 0.0.0.0: Comando para executar o projeto web em Ruby no servidor de desenvolvimento com o endereço de IP específico.
+rails s -b 0.0.0.0: Comando para executar o projeto web em Ruby no servidor de desenvolvimento com o endereço de IP específico.
 
 #### Scaffold
 rails generate scaffold ou rails g scaffold
