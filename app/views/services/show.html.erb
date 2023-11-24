@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      margin: 20px;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #6495ED; 
+      color: white; 
+    }
+
+    tr:nth-child(even) {
+      background-color: #f0f8ff; 
+    }
+
+    tr:nth-child(odd) {
+      background-color: white; 
+    }
+
+    .button-container {
+      margin: 20px;
+    }
+
+    .edit-button {
+      background-color: #1e88e5; 
+      color: white; 
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .back-button {
+      background-color: #1e88e5; 
+      color: white; 
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Data</th>
+    </tr>
+    <tr>
+      <td><strong>Tipe:</strong></td>
+      <td><%= @service.tipe %></td>
+    </tr>
+    <tr>
+      <td><strong>Cod:</strong></td>
+      <td><%= @service.cod %></td>
+    </tr>
+  </table>
+
+  <div class="button-container">
+    <%= link_to 'Edit', edit_service_path(@service), class: 'edit-button' %>
+    <%= link_to 'Back', services_path, class: 'back-button' %>
+  </div>
+
+</body>
+
+</html>

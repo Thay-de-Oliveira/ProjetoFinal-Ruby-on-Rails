@@ -1,0 +1,63 @@
+<%= form_with(model: service, local: true) do |form| %>
+  <% if service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :state_id, class: "dark-blue-text" %>
+    <%= form.select("state_id", State.all.collect {|s| [s.description, s.id]}, {include_blank: 'Selecione...'}, class: "rounded grey-border bigger-font dark-blue-text") %> 
+  </div>
+
+  <div class="field">
+    <%= form.label :tipe, class: "dark-blue-text" %>
+    <%= form.text_field :tipe, class: "rounded grey-border bigger-font dark-blue-text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cod, class: "dark-blue-text" %>
+    <%= form.number_field :cod, class: "rounded grey-border bigger-font dark-blue-text" %>
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Back', root_path, class: "btn waves-effect waves-light dark-blue left-align" %>
+    <%= form.submit 'Submit', class: "btn waves-effect waves-light dark-blue" %>
+  </div>
+
+  <style>
+    .field {
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .dark-blue-text {
+      color: #003366 !important; 
+      font-size: 16px !important; 
+    }
+
+    .grey-border {
+      border: 1px solid grey !important;
+      border-radius: 5px !important; 
+    }
+
+    .bigger-font {
+      font-size: 16px !important; 
+    }
+
+    .dark-blue {
+      background-color: #1e88e5 !important;
+    }
+
+    .left-align {
+      margin-right: 10px; 
+    }
+  </style>
+<% end %>

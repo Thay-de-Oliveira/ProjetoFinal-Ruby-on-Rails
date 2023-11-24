@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Events Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Categoryevent</th>
+      <th>Grouping</th>
+      <th>Subgrouping</th>
+      <th>Species</th>
+      <th>Subspecies</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events_forms.each do |events_form| %>
+      <tr>
+        <td><%= events_form.categoryevent %></td>
+        <td><%= events_form.grouping %></td>
+        <td><%= events_form.subgrouping %></td>
+        <td><%= events_form.species %></td>
+        <td><%= events_form.subspecies %></td>
+        <td><%= link_to 'Show', events_form %></td>
+        <td><%= link_to 'Edit', edit_events_form_path(events_form) %></td>
+        <td><%= link_to 'Destroy', events_form, method: :delete, data: { confirm: 'Are you sure you would like to delete all registered data?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Events Form', new_events_form_path %>

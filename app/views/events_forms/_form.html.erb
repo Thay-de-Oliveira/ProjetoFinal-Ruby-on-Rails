@@ -1,0 +1,73 @@
+<%= form_with(model: events_form, local: true) do |form| %>
+  <% if events_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(events_form.errors.count, "error") %> prohibited this events_form from being saved:</h2>
+
+      <ul>
+        <% events_form.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :categoryevent, class: "dark-blue-text" %>
+    <%= form.text_field :categoryevent, class: "rounded grey-border bigger-font dark-blue-text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grouping, class: "dark-blue-text" %>
+    <%= form.text_field :grouping, class: "rounded grey-border bigger-font dark-blue-text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subgrouping, class: "dark-blue-text" %>
+    <%= form.text_field :subgrouping, class: "rounded grey-border bigger-font dark-blue-text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :species, class: "dark-blue-text" %>
+    <%= form.text_field :species, class: "rounded grey-border bigger-font dark-blue-text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subspecies, class: "dark-blue-text" %>
+    <%= form.text_field :subspecies, class: "rounded grey-border bigger-font dark-blue-text" %>
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Back', root_path, class: "btn waves-effect waves-light dark-blue left-align" %>
+    <%= form.submit 'Submit', class: "btn waves-effect waves-light dark-blue" %>
+  </div>
+
+  <style>
+    .field {
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .dark-blue-text {
+      color: #003366 !important; /* Azul mais escuro */
+      font-size: 16px !important; 
+    }
+
+    .grey-border {
+      border: 1px solid grey !important;
+      border-radius: 5px !important; 
+    }
+
+    .bigger-font {
+      font-size: 16px !important; 
+    }
+
+    .dark-blue {
+      background-color: #1e88e5 !important;
+    }
+
+    .left-align {
+      margin-right: 10px; 
+    }
+  </style>
+<% end %>

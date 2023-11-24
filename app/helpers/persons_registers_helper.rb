@@ -1,0 +1,2 @@
+module PersonsRegistersHelper
+end

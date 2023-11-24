@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  categoryevent: MyString
+  grouping: MyString
+  subgrouping: MyString
+  species: MyString
+  subspecies: MyString
+
+two:
+  categoryevent: MyString
+  grouping: MyString
+  subgrouping: MyString
+  species: MyString
+  subspecies: MyString

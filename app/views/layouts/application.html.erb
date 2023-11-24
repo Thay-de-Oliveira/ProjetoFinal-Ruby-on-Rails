@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projetinho</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="<%= root_path %>" class="brand-logo valign-wrapper">
+        <%= image_tag "logo.png", class: "logo-img" %>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/events_forms">Acontecimento</a></li>
+        <li><a href="/services">Atendimento</a></li>
+        <li><a href="/persons_registers">Cadastro de Cidadão</a></li>
+        <li><%= link_to 'English', '/?locale=en' %></li>
+        <li><%= link_to 'Português', root_path(locale: "pt-BR") %></li>
+      </ul>
+    </div>
+  </nav>
+
+  
+
+  <style>
+    nav {
+      background-color: #1e88e5;
+    }
+
+    nav a {
+      color: white;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+     
+    }
+
+    .logo-img {
+      height: 30px; 
+    
+    }
+  </style>
+
+  <%= yield %>
+</body>
+
+
+</html>
