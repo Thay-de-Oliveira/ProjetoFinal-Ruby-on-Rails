@@ -65,6 +65,14 @@ class ServicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def service_params
-      params.require(:service).permit(:tipe, :cod)
+      params.require(:service).permit(:events_form_id, :tipe, :cod)
     end
+
+    before_action :set_events_form_options, only: %i[ create new edit update ]
+    # COLECT = Usado para manipular os dados ou recuperar os dados para um novo arrey, personalizado
+    # PLUCK = Usado para pegar um dado e montar um arrey, bruto
+    def set_events_form_options
+      @events_form_options = EventsForm.all.pluck(:species ,:id)
+    end
+
 end

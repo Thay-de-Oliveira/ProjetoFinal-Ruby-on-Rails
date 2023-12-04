@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :state_id, class: "dark-blue-text" %>
-    <%= form.select("state_id", State.all.collect {|s| [s.description, s.id]}, {include_blank: 'Selecione...'}, class: "rounded grey-border bigger-font dark-blue-text") %> 
+    <%= form.label :events_form_id, class: "dark-blue-text" %>
+    <%= form.select("events_form_id", EventsForm.all.collect {|s| [s.species, s.id]}, {include_blank: 'Selecione...'}, class: "rounded grey-border bigger-font dark-blue-text") %> 
   </div>
 
   <div class="field">
