@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_24_001409) do
+ActiveRecord::Schema.define(version: 2023_11_30_225551) do
 
   create_table "cities", force: :cascade do |t|
     t.integer "cod"
@@ -46,7 +46,9 @@ ActiveRecord::Schema.define(version: 2023_10_24_001409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "AddEvents_id"
+    t.integer "events_form_id"
     t.index ["AddEvents_id"], name: "index_services_on_AddEvents_id"
+    t.index ["events_form_id"], name: "index_services_on_events_form_id"
   end
 
   create_table "states", force: :cascade do |t|
